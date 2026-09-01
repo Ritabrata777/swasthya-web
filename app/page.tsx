@@ -236,6 +236,58 @@ export default function SwasthyaDashboard() {
           {/* Tab Content (Framer Motion) */}
           <div className="flex-1 relative">
             <AnimatePresence mode="wait">
+              
+              {/* OVERVIEW TAB */}
+              {activeTab === "overview" && (
+                <motion.div
+                  key="overview"
+                  initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex flex-col gap-6"
+                >
+                  <div>
+                    <h3 className="text-sm font-bold tracking-wider uppercase text-white/60 mb-3">Chief Complaint</h3>
+                    <p className="text-white text-sm bg-white/5 p-4 rounded-xl border border-white/15">
+                      Patient presents with severe sore throat, difficulty swallowing, and mild fever persisting for the last 48 hours. Denies cough.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-bold tracking-wider uppercase text-white/60 mb-3">Triage Summary</h3>
+                    <div className="space-y-3">
+                      <div className="flex justify-between text-sm bg-black/40 border border-white/10 p-3 rounded-lg">
+                        <span className="text-white/60">Pain Scale</span><span className="text-red-400 font-bold">7/10</span>
+                      </div>
+                      <div className="flex justify-between text-sm bg-black/40 border border-white/10 p-3 rounded-lg">
+                        <span className="text-white/60">Duration</span><span className="text-white font-bold">2 Days</span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* HISTORY TAB */}
+              {activeTab === "history" && (
+                <motion.div
+                  key="history"
+                  initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <h3 className="text-sm font-bold tracking-wider uppercase text-white/60 mb-3">Medical History</h3>
+                  <ul className="list-disc list-inside text-sm text-white space-y-2 mb-6 ml-1">
+                      <li>Hypertension <span className="text-white/50">(Diagnosed 2018)</span></li>
+                      <li>Type 2 Diabetes <span className="text-white/50">(Diet controlled)</span></li>
+                  </ul>
+                  <h3 className="text-sm font-bold tracking-wider uppercase text-white/60 mb-3">Past Encounters</h3>
+                  <div className="space-y-3">
+                      <div className="p-3 bg-white/5 border border-white/15 rounded-xl">
+                          <div className="text-xs text-green-400 mb-1 font-bold">12 May 2026</div>
+                          <div className="text-sm text-white">Routine Blood Pressure Follow-up</div>
+                      </div>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* PRESCRIPTION TAB */}
               {activeTab === "prescription" && (
                 <motion.div
                   key="prescription"
